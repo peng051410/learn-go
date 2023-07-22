@@ -1,0 +1,16 @@
+* first go build error
+[Running] go run "/Users/lizhipeng/github/learn-go/hellomodule/main.go"
+hellomodule/main.go:4:2: no required module provides package go.uber.org/zap: go.mod file not found in current directory or any parent directory; see 'go help modules'
+** Solution
+go mod init github.com/peng051410/hellomodule
+
+file go.mod added
+* second go build error
+[Running] go run "/Users/lizhipeng/github/learn-go/hellomodule/main.go"
+hellomodule/main.go:4:2: no required module provides package github.com/valyala/fasthttp: go.mod file not found in current directory or any parent directory; see 'go help modules'
+hellomodule/main.go:5:2: no required module provides package go.uber.org/zap: go.mod file not found in current directory or any parent directory; see 'go help modules'
+
+** Solution
+go mod tidy
+
+file go.mod modified, file go.sum added

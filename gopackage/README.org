@@ -1,0 +1,13 @@
+* go-outline
+https://github.com/lukehoban/go-outline
+
+* gopls
+https://github.com/golang/tools/blob/master/gopls/README.md
+
+* godef
+go install -v github.com/rogpeppe/godef@v1.1.2
+
+* gocode
+https://github.com/nsf/gocode
+
+go install -v github.com/stamblerre/gocode@v1.0.0
