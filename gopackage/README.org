@@ -1,13 +1,28 @@
-* go-outline
+* go internal package
+** fmt
+** os
+1. system process info
+2. 
+
+* go third-party package
+** go-outline
 https://github.com/lukehoban/go-outline
 
-* gopls
+** gopls
 https://github.com/golang/tools/blob/master/gopls/README.md
 
-* godef
+** godef
 go install -v github.com/rogpeppe/godef@v1.1.2
 
-* gocode
+** gocode
 https://github.com/nsf/gocode
 
 go install -v github.com/stamblerre/gocode@v1.0.0
+
+* go package scope
+1. 在go语言中,变量,函数,方法等的存取权限只有exported(全局)和unexported(包可见，局部)2种。
+2. internal package
+
+* go package type
+** executable go package
+** lib go package

@@ -14,3 +14,5 @@ hellomodule/main.go:5:2: no required module provides package go.uber.org/zap: go
 go mod tidy
 
 file go.mod modified, file go.sum added
+
+* Reproducible build 

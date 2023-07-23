@@ -1,0 +1,20 @@
+* lib-layout structure
+├── go.mod
+├── internal
+│  ├── pkga
+│  │  └── pkg_a.go
+│  └── pkgb
+│     └── pkg_b.go
+├── pkg1
+│  └── pkg1.go
+└── pkg2
+   └── pkg2.go
+
+* single lib-layout structure
+├── go.mod
+├── pkg.go
+├── internal
+│  ├── pkga
+│  │  └── pkg_a.go
+│  └── pkgb
+│     └── pkg_b.go

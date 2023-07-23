@@ -1,0 +1,29 @@
+* exe-layout structure
+├── cmd  //存放可执行文件对应的main.go文件,也可名为app
+│  ├── app1
+│  │  └── main.go //只做简单的参数解析与资源初始化
+│  └── app2
+│     └── main.go
+├── go.mod
+├── internal
+│  ├── pkga
+│  │  └── pkg_a.go
+│  └── pkgb
+│     └── pkg_b.go
+├── pkg1 //存放main依赖的库文件
+│  └── pkg1.go
+└── pkg2
+   └── pkg2.go
+
+* single exe-layout structure
+├── main.go 
+├── go.mod
+├── internal
+│  ├── pkga
+│  │  └── pkg_a.go
+│  └── pkgb
+│     └── pkg_b.go
+├── pkg1 //存放main依赖的库文件
+│  └── pkg1.go
+└── pkg2
+   └── pkg2.go

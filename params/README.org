@@ -1,0 +1,10 @@
+* print args
+go build .
+./params
+result is: [./params]
+result type is arr, arr[0] is running program name
+
+* print addtional parameters
+./params tomyli
+result is: [./params tomyli] 
+result type is arr, arr length len is 2
