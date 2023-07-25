@@ -9,6 +9,7 @@ go get "github.com/sirupsen/logrus@v1.8.3"
 *** go build -mod=vendor
 build with vendor 
 ** go run
+** go doc
 ** go mod
 *** go mod init
 init a go mod

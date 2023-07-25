@@ -1,0 +1,8 @@
+* DONE 实现redis的存储
+* TODO 实现全局的json序列化和反序列化
+
+https://www.jianshu.com/p/f8f5a3cbaf91
+https://developer.redis.com/howtos/redisjson/using-go/
+
+* 感受如下
+** 这异常处理写起来真是累

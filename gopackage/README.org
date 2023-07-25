@@ -6,9 +6,23 @@
 
 ** flag
 
-** http
+** net/http
 
 ** image
+
+** sync
+
+** log
+
+** mime
+
+** time
+
+** context
+
+** syscall
+
+** errors
 
 * go third-party package
 ** go-outline
@@ -26,6 +40,9 @@ https://github.com/nsf/gocode
 go install -v github.com/stamblerre/gocode@v1.0.0
 
 ** logrus
+
+** mux
+https://github.com/gorilla/mux
 
 ** pq
 Pure Go Postgres driver for database/sql
