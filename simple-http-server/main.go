@@ -1,10 +1,19 @@
 package main
 
-import "net/http"
+import (
+	"log"
+	"net/http"
+)
 
 func main() {
 	http.HandleFunc("/", func(w http.ResponseWriter, r *http.Request) {
-		w.Write([]byte("hello world"))
+		_, err := w.Write([]byte("hello world"))
+		if err != nil {
+			log.Println("write response failed:", err)
+		}
 	})
-	http.ListenAndServe(":8080", nil)
+	err := http.ListenAndServe(":8080", nil)
+	if err != nil {
+		log.Fatal("Server failed to start: ", err)
+	}
 }

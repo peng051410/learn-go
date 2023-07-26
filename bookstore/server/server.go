@@ -67,7 +67,7 @@ func (bs *BookStoreServer) updateBookHandler(writer http.ResponseWriter, request
 	}
 }
 
-func (bs *BookStoreServer) getAllBooksHandler(writer http.ResponseWriter, request *http.Request) {
+func (bs *BookStoreServer) getAllBooksHandler(writer http.ResponseWriter, _ *http.Request) {
 	books, err := bs.s.GetAll()
 	if err != nil {
 		http.Error(writer, err.Error(), http.StatusInternalServerError)
@@ -103,7 +103,7 @@ func response(writer http.ResponseWriter, v interface{}) {
 
 }
 
-// NewBookStoreServer 接收一个接口类型，返回一个具体类型
+// NewBookStoreServer 接收一个接口类型，返回一个具体类型，Go语言常用设计方法
 func NewBookStoreServer(addr string, s store.Store) *BookStoreServer {
 	srv := &BookStoreServer{
 		s: s,

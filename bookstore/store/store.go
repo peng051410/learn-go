@@ -7,6 +7,7 @@ var (
 	ErrExist      = errors.New("exist")
 )
 
+// Book 要存储的实体
 type Book struct {
 	Id      string   `json:"id"`
 	Name    string   `json:"name"`
@@ -14,6 +15,7 @@ type Book struct {
 	Press   string   `json:"press"`
 }
 
+// Store 存储层的接口
 type Store interface {
 	Create(*Book) error
 	Update(*Book) error

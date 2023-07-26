@@ -24,6 +24,15 @@
 
 ** errors
 
+** io
+
+** net
+
+** strings
+
+** unicode
+** reflect
+
 * go third-party package
 ** go-outline
 https://github.com/lukehoban/go-outline
@@ -47,6 +56,9 @@ https://github.com/gorilla/mux
 ** pq
 Pure Go Postgres driver for database/sql
 https://github.com/lib/pq
+
+** testify
+https://github.com/stretchr/testify
 
 * go package scope
 1. 在go语言中,变量,函数,方法等的存取权限只有exported(全局)和unexported(包可见，局部)2种。

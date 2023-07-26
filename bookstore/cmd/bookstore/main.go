@@ -1,7 +1,7 @@
 package main
 
 import (
-	_ "bookstore/internal/store"
+	_ "bookstore/internal/store" //自动注册
 	"bookstore/server"
 	"bookstore/store/factory"
 	"context"
@@ -22,7 +22,7 @@ func main() {
 
 	errChan, err := srv.ListenAndServe()
 	if err != nil {
-		log.Println("web server start failed:", err)
+		log.Fatalln("web server start failed:", err)
 		return
 	}
 
