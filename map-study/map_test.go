@@ -1,6 +1,9 @@
 package map_study
 
-import "testing"
+import (
+	"github.com/stretchr/testify/assert"
+	"testing"
+)
 
 func TestCreateMap(t *testing.T) {
 	m := map[string]string{
@@ -139,4 +142,13 @@ func TestMapIsEquals(t *testing.T) {
 
 	// map can't be compared, but map can be compared with nil
 	t.Log(m1 == nil)
+}
+
+func TestMapNilDeclare(t *testing.T) {
+
+	var m map[string]string
+	t.Log(m)
+	assert.Nil(t, m, "m is nil")
+	assert.Equal(t, 0, len(m), "The two words should be the same.")
+	//m["name"] = "tomyli" // panic: assignment to entry in nil map
 }
