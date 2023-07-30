@@ -115,3 +115,30 @@ func TestVariableSwitch(t *testing.T) {
 func TestConstWithOmit(t *testing.T) {
 	t.Log(KB, MB, GB, TB)
 }
+
+
+func TestStructDeclareWithNew(t *testing.T) {
+	timer := time.NewTimer(10)
+	t.Logf("type is: %T", timer)
+	t.Log(timer)
+}
+
+func TestTypeDeclare(t *testing.T) {
+	type MyInt int32
+
+	var a MyInt = 10
+	var b int32 = 100
+
+	a = MyInt(b)
+	t.Log(a, b)
+}
+
+func TestTypeAlias(t *testing.T) {
+
+	type MyInt = int32
+	var a MyInt = 10
+	var b int32 = 100
+
+	a = b
+	t.Log(a, b)
+}

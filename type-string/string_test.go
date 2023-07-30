@@ -67,3 +67,9 @@ func TestStringForRange(t *testing.T) {
 		t.Logf("content: %d, %x", i, u)
 	}
 }
+
+func TestStringInit(t *testing.T) {
+	var str string
+	t.Log("str init value is: ", str)
+	t.Log("str len is: ", len(str))
+}

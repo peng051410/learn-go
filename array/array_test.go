@@ -55,6 +55,12 @@ func TestSliceFromArray(t *testing.T) {
 	t.Log(slice)
 }
 
+func TestSliceFromArray2(t *testing.T) {
+	arr := [5]int{1, 2, 3, 4, 5}
+	slice := arr[:]
+	t.Log(slice)
+}
+
 func TestSliceAppend(t *testing.T) {
 	arr := []int{1, 2, 3, 4, 5}
 	slice := arr[1:4]
