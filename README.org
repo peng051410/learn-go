@@ -7,7 +7,9 @@ fetch package and it's dependencies, only fetch latest version
 go get "github.com/sirupsen/logrus@v1.8.3"
 ** go build
 *** go build -mod=vendor
-build with vendor 
+build with vendor
+*** go build -o TARGET
+build with target name
 ** go run
 ** go doc
 ** go mod
