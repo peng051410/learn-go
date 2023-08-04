@@ -1,0 +1,13 @@
+* 建立lib包
+* 建立测试函数文件
+example_test.go
+** 建立测试方法，以Example开头
+如: ExampleTrace
+
+* go build tag
+#+begin_src go
+//go:build dev
+#+end_src
+
+** go build tag can't obtain on runtime
+https://github.com/golang/go/issues/7007
