@@ -1,0 +1,6 @@
+* interface inner struct
+/runtime/runtime2.go
+** print eface and iface
+/runtime/print.go
+1. printeface
+2. printiface

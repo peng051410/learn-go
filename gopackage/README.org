@@ -38,7 +38,11 @@
 ** bufio
 
 ** json
+
 ** path
+
+** bytes
+
 * go third-party package
 ** go-outline
 https://github.com/lukehoban/go-outline
