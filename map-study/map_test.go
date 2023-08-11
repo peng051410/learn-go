@@ -152,3 +152,35 @@ func TestMapNilDeclare(t *testing.T) {
 	assert.Equal(t, 0, len(m), "The two words should be the same.")
 	//m["name"] = "tomyli" // panic: assignment to entry in nil map
 }
+
+func TestMapValueIsFunc(t *testing.T) {
+	// explain that func is the first class citizen in golang
+	m := map[int]func(op int) int{}
+	m[1] = func(op int) int { return op }
+	m[2] = func(op int) int { return op * op }
+	m[3] = func(op int) int { return op * op * op }
+	t.Log(m[1](2), m[2](2), m[3](2))
+}
+
+func TestMapAsSet(t *testing.T) {
+	mySet := map[int]bool{}
+	mySet[1] = true
+	mySet[2] = true
+	mySet[3] = true
+	t.Log(mySet)
+
+	delete(mySet, 1)
+	t.Log(mySet)
+
+	if mySet[1] {
+		t.Log("1 is exist")
+	} else {
+		t.Log("1 is not exist")
+	}
+
+	if mySet[2] {
+		t.Log("2 is exist")
+	} else {
+		t.Log("2 is not exist")
+	}
+}
