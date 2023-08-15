@@ -107,3 +107,38 @@ func TestSliceDataUnbind(t *testing.T) {
 	t.Log("after modify slice[0] len: ", len(slice), "cap: ", cap(slice), "data: ", slice, "old arr: ", arr)
 
 }
+
+func TestSliceToArrayPointer(t *testing.T) {
+	slice := []int32{1, 2, 3}
+	// from go 1.17, convert array length must be less then or equals slice length
+	arr := (*[3]int32)(slice)
+	t.Log("arr", arr)
+	arr[0] = 4
+	t.Log("arr", arr)
+	t.Log(arr[0])
+}
+
+func TestSliceToArrayPointerLessThanSliceLength(t *testing.T) {
+	slice := []int32{1, 2, 3}
+	// from go 1.17, convert array length must be less then or equals slice length
+	arr := (*[2]int32)(slice)
+	t.Log("arr", arr)
+	arr[0] = 4
+	t.Log("arr", arr)
+	t.Log(arr[0])
+}
+
+func TestNilSliceToArrayPointer(t *testing.T) {
+	var slice []int32
+	arr := (*[0]int32)(slice)
+	// arr is nil
+	t.Log(arr)
+	assert.Nil(t, arr)
+}
+
+func TestEmptySliceToArrayPointer(t *testing.T) {
+	slice := []int32{}
+	arr := (*[0]int32)(slice)
+	t.Log(arr)
+	assert.Equal(t, 0, len(arr))
+}
