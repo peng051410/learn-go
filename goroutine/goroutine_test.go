@@ -434,3 +434,42 @@ func TestNilChannelApply(t *testing.T) {
 	}
 	fmt.Println("program is end")
 }
+
+func MyAdd(tt int, ch chan<- int) {
+	switch tt {
+	case 1:
+		ch <- 8
+	case 0:
+		ch <- 3
+	default:
+		ch <- -1
+	}
+}
+
+func TestMultiAdd(t *testing.T) {
+	ch := make(chan int)
+	for i := 0; i < 2; i++ {
+		go MyAdd(i, ch)
+	}
+
+	t.Log("start calculate sum")
+	sum := 0
+	for i := 0; i < 2; i++ {
+		sum += <-ch
+	}
+	t.Log(sum)
+}
+
+func TestMultiAddWithWaitGroup(t *testing.T) {
+	var wg sync.WaitGroup
+	wg.Add(2)
+	var sum = 0
+	for i := 1; i < 3; i++ {
+		go func(i int) {
+			defer wg.Done()
+			sum += i
+		}(i)
+	}
+	wg.Wait()
+	t.Log(sum)
+}

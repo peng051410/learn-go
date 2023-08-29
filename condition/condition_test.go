@@ -31,7 +31,7 @@ func TestForWithMultiVariable(t *testing.T) {
 
 	sum := 0
 	for i, j := 0, 0; i < 5 && j < 6; i, j = i+1, j+1 {
-		sum += (i + j)
+		sum += i + j
 	}
 	t.Log(sum)
 }

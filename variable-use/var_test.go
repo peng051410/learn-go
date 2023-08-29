@@ -3,6 +3,7 @@ package variable_use
 import (
 	"github.com/stretchr/testify/assert"
 	"testing"
+	"time"
 )
 
 const NAME = "tomyli"
@@ -115,7 +116,6 @@ func TestVariableSwitch(t *testing.T) {
 func TestConstWithOmit(t *testing.T) {
 	t.Log(KB, MB, GB, TB)
 }
-
 
 func TestStructDeclareWithNew(t *testing.T) {
 	timer := time.NewTimer(10)

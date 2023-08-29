@@ -11,6 +11,9 @@ func TestArrayDeclare(t *testing.T) {
 }
 
 func TestArrayInit(t *testing.T) {
+	var emptyArr [5]int
+	t.Log(emptyArr)
+
 	arr := [5]int{1, 2, 3, 4, 5}
 	t.Log(arr)
 
@@ -45,8 +48,18 @@ func TestArrayModifyEle(t *testing.T) {
 }
 
 func TestArraySlice(t *testing.T) {
+	var s0 []int
+	t.Log(s0, len(s0), cap(s0))
+	s0 = append(s0, 1)
+	t.Log(s0, len(s0), cap(s0))
+
 	arr := []int{1, 2, 3, 4, 5}
-	t.Log(arr)
+	t.Log(arr, len(arr), cap(arr))
+
+	s2 := make([]int, 3, 5)
+	t.Log(s2, len(s2), cap(s2))
+	s2 = append(s2, 1)
+	t.Log(s2, len(s2), cap(s2))
 }
 
 func TestSliceFromArray(t *testing.T) {
@@ -141,4 +154,42 @@ func TestEmptySliceToArrayPointer(t *testing.T) {
 	arr := (*[0]int32)(slice)
 	t.Log(arr)
 	assert.Equal(t, 0, len(arr))
+}
+
+func TestArrayTravel(t *testing.T) {
+	arr := [5]int{1, 2, 3, 4, 5}
+	for i := 0; i < len(arr); i++ {
+		t.Log(arr[i])
+	}
+
+	t.Log("Travel by range")
+
+	for idx, ele := range arr {
+		t.Log(idx, ele)
+	}
+}
+
+func TestSliceGrowing(t *testing.T) {
+	var slice []int
+	for i := 0; i < 10; i++ {
+		slice = append(slice, i)
+		t.Log(len(slice), cap(slice))
+	}
+}
+
+func TestSliceShareMemory(t *testing.T) {
+	year := []string{"Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep"}
+	Q2 := year[3:6]
+	t.Log(Q2, len(Q2), cap(Q2))
+	summer := year[5:8]
+	t.Log(summer, len(summer), cap(summer))
+	summer[0] = "Unknown"
+	t.Log(Q2)
+	t.Log(year)
+}
+
+func TestSliceComparing(t *testing.T) {
+	a := []int{1, 2, 3, 4}
+	b := []int{1, 2, 3, 4}
+	assert.Equal(t, a, b, "The two words should be the same.")
 }

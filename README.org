@@ -10,7 +10,9 @@ go get "github.com/sirupsen/logrus@v1.8.3"
 build with vendor
 *** go build -o TARGET
 build with target name
+*** go build -gcflags "-N -l" main.go
 ** go run
+*** go run -race
 ** go doc
 ** go mod
 *** go mod init
@@ -23,12 +25,20 @@ edit go.mod file by command line
 go mod edit -require="github.com/sirupsen/logrus@v1.7.0"
 *** go mod vendor
 a complement for go mod, which use in an interal network or for sensitive build performance
+
+*** go mod graph
+show module dependency graph
+
 ** go list
 *** go list -m "github.com/sirupsen/logrus"
 list module logrus version info
 
 *** go list all modules
 go list -m all
+
+** go tool
+*** go tool objdump
+go tool objdump -s "main." main > aa.asm
 **** out
 github.com/sirupsen/logrus v1.9.3
 *** go list -m -verions "github.com/sirupsen/logrus"
