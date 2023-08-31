@@ -14,6 +14,7 @@ import (
 
 func TestEmptyInterface(t *testing.T) {
 	var i interface{}
+	t.Log(i)
 	i = 1
 	t.Log(i)
 	i = "hello"

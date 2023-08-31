@@ -48,6 +48,7 @@ func TestArrayModifyEle(t *testing.T) {
 }
 
 func TestArraySlice(t *testing.T) {
+
 	var s0 []int
 	t.Log(s0, len(s0), cap(s0))
 	s0 = append(s0, 1)

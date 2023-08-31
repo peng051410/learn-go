@@ -14,7 +14,8 @@ func TestStringJoinWithSymbol(t *testing.T) {
 
 func TestStringJoinWithBuilder(t *testing.T) {
 	var builder strings.Builder
-	builder.WriteString("hello")
+	writeString, _ := builder.WriteString("hello")
+	t.Log("write string length is: ", writeString)
 	builder.WriteString("world")
 	t.Log(builder.String())
 }

@@ -40,6 +40,7 @@ func TestStructWithOtherStruct(t *testing.T) {
 
 	user := User{}
 	t.Log("code is: ", user.Address.Name)
+	//t.Log("code is: ", user.Code)
 }
 
 func TestStructWithImportOtherStruct(t *testing.T) {
@@ -51,6 +52,7 @@ func TestStructWithImportOtherStruct(t *testing.T) {
 	type User struct {
 		Name string
 		Age  int
+		//匿名引入
 		Address
 	}
 
