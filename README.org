@@ -1,5 +1,5 @@
 * go cmd
-** go verion
+** go version
 ** go help
 ** go get
 fetch package and it's dependencies, only fetch latest version

@@ -2,9 +2,10 @@ package method_test
 
 import (
 	"fmt"
-	"github.com/stretchr/testify/assert"
 	"reflect"
 	"testing"
+
+	"github.com/stretchr/testify/assert"
 )
 
 type Person struct {
@@ -212,4 +213,10 @@ func TestMethodSetTypeDefine(t *testing.T) {
 	b := T2(s)
 	dumpMethodSet(b)
 	dumpMethodSet(&b)
+}
+
+func BenchmarkHello(b *testing.B) {
+	for i := 0; i < b.N; i++ {
+		fmt.Printf("hello")
+    }
 }

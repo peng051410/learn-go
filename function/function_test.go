@@ -63,3 +63,16 @@ func TestFunctionMultiReturnValues(t *testing.T) {
 	a, b := returnMultiValues()
 	t.Log(a, b)
 }
+
+
+func TestFunctionMutibleParams(t *testing.T) {
+	t.Log(sum(1, 2, 3, 4, 5))
+}
+
+func sum(nums ...int) int {
+	s := 0
+	for _, n := range nums {
+		s += n
+	}
+	return s
+}

@@ -257,6 +257,7 @@ func (women Women) Name() string {
 	return "women"
 }
 
+// interface creator, return struct
 func NewPerson(sex Sex) *Person {
 	return &Person{
 		Sex: sex,

@@ -128,7 +128,7 @@ type t struct {
 type S struct {
 	*MyInt
 	t
-	io.Reader
+	io.Reader // embedded field, represent all method of io.Reader
 	s string
 	n int
 }
@@ -144,13 +144,16 @@ func TestStructEmbedded(tt *testing.T) {
 	}
 
 	var sl = make([]byte, len("hello, tomy"))
+
 	s.Reader.Read(sl)
 	s.Read(sl)
+
 	fmt.Println(string(sl))
 	s.MyInt.Add(18)
 	s.Add(18)
 	fmt.Println(*(s.MyInt))
 }
+
 
 func dumpMethodSet(i interface{}) {
 	dynTyp := reflect.TypeOf(i)

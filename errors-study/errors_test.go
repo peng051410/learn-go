@@ -56,6 +56,13 @@ func TestErrorAsFunc(t *testing.T) {
 	//}
 }
 
+func foo() {
+	println("foo start")
+	panic("no no no")
+	bar()
+	println("foo end")
+}
+
 func TestPanicBroadcast(t *testing.T) {
 	println("test start")
 	foo()
@@ -66,13 +73,6 @@ func TestPanicBroadcastNormal(t *testing.T) {
 	println("test start")
 	fooWithRecover()
 	println("test end")
-}
-
-func foo() {
-	println("foo start")
-	panic("no no no")
-	bar()
-	println("foo end")
 }
 
 func fooWithRecover() {
@@ -163,4 +163,14 @@ func TestDeferFuncVariableBind(t *testing.T) {
 		}()
 	}
 
+}
+
+func c() (i int) {
+	defer func() {
+		i++
+	}()
+	return 1
+}
+func TestDeferFuncAssignReturnValue(t *testing.T) {
+	t.Log(c())
 }

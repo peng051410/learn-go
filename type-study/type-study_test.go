@@ -8,6 +8,7 @@ import (
 )
 
 type MyInt int64
+type MyInitAlias = int64
 
 func TestIntTypeDeclare(t *testing.T) {
 
